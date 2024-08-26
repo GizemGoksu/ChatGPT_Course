@@ -1,27 +1,4 @@
-import openai
-import os
-
-# Python dotenv is a powerful tool that makes it easy to handle environment variables in Python applications from start to finish.
-# The library reads from a .env file at the root of your project and loads them into os.environ. These environment variables can then be accessed in your code.
-
-# Buradan oku --> https://medium.com/@sujathamudadla1213/what-is-the-use-of-env-8d6b3eb94843
-# A .env file is a text file containing key value pairs of all the environment variables required by your application. This file is included with your project locally but not saved to source control so that you aren't putting potentially sensitive information at risk.
-# The .env file is particularly useful for storing sensitive information such as API keys, access tokens, and passwords. By keeping this information in a separate file, you can share the main codebase without exposing sensitive details. This is crucial for security, especially when collaborating on projects or sharing code repositories.
-
-from dotenv import load_dotenv, find_dotenv
-_ = load_dotenv(find_dotenv()) # read local .env file and load environment variables from .env file
-
-
-client = openai.OpenAI(api_key="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")
-
-def get_completion(prompt,model="gpt-3.5-turbo",):
-    messages = [{"role": "user", "content": prompt}] # dictionary list
-    response = client.chat.completions.create(
-        model = model,
-        messages = messages,
-        temperature = 0, # this is the degree of randomness of the model's output
-    )
-    return response.choices[0].message.content
+import functions
 
 # PRINCIPLE 1
 
@@ -49,7 +26,7 @@ Summarize the text delimited by triple backticks
 into a single sentence.
 ```{text}```
 """
-response = get_completion(prompt)
+response = functions.get_completion(prompt)
 print(response)
 
   # TACTIC 2 : Ask for a structured output like JSON, HTML
@@ -59,7 +36,7 @@ with their authors and genres.
 Provide them in JSON format with the following keys: 
 book_id, title, author, genre.
 """
-response = get_completion(prompt)
+response = functions.get_completion(prompt)
 print(response)
 
   # TACTIC 3 : Ask the model to check whether conditions are satisfied
@@ -89,7 +66,7 @@ then simply write \"No steps provided.\"
 
 \"\"\"{text_1}\"\"\"
 """
-response = get_completion(prompt)
+response = functions.get_completion(prompt)
 print("Completion for Text 1:")
 print(response)
 
@@ -106,7 +83,7 @@ the most intricate tapestry begins with a solitary thread.
 
 <child>: Teach me about resilience.
 """
-response = get_completion(prompt)
+response = functions.get_completion(prompt)
 print(response)
 
 # PRINCIPLE 2
@@ -137,7 +114,7 @@ Separate your answers with line breaks.
 Text:
 ```{text}```
 """
-response = get_completion(prompt_1)
+response = functions.get_completion(prompt_1)
 print("Completion for prompt 1:")
 print(response)
     # Ask for output in a specified format
@@ -159,7 +136,7 @@ Output JSON: <json with summary and num_names>
 
 Text: <{text}>
 """
-response = get_completion(prompt_2)
+response = functions.get_completion(prompt_2)
 print("\nCompletion for prompt 2:")
 print(response)
 
@@ -187,7 +164,7 @@ Costs:
 3. Maintenance cost: 100,000 + 100x
 Total cost: 100x + 250x + 100,000 + 100x = 450x + 100,000
 """
-response = get_completion(prompt)
+response = functions.get_completion(prompt)
 print(response)
 
   # example 2
@@ -247,5 +224,5 @@ Total cost: 100x + 250x + 100,000 + 100x = 450x + 100,000
 ```
 Actual solution:
 """
-response = get_completion(prompt)
+response = functions.get_completion(prompt)
 print(response)
