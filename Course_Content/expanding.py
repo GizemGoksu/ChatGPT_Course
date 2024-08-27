@@ -4,8 +4,6 @@ import Function.main_functions as main_functions
 
 # Customize the automated reply to a customer email
 
-# given the sentiment from the lesson on "inferring",
-# and the original customer message, customize the email
 sentiment = "negative"
 
 # review for a blender
@@ -65,4 +63,4 @@ print(response)
 response = main_functions.get_completion(prompt, temperature=0.7)
 print(response)
 
-# For tasks taht require reliability and predictability, tempature should be set to 0.
+# For tasks that require reliability and predictability, tempature should be set to 0.
