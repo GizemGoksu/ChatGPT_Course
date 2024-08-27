@@ -14,11 +14,13 @@ _ = load_dotenv(find_dotenv()) # read local .env file and load environment varia
 
 client = openai.OpenAI(api_key="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")
 
-def get_completion(prompt,model="gpt-3.5-turbo",):
+def get_completion(prompt,model="gpt-3.5-turbo",temperature=0):
     messages = [{"role": "user", "content": prompt}] # dictionary list
     response = client.chat.completions.create(
         model = model,
         messages = messages,
-        temperature = 0, # this is the degree of randomness of the model's output
+        temperature = temperature, # this is the degree of randomness of the model's output
     )
     return response.choices[0].message.content
+
+# Temperature artarsa randomluk artar ve yaratcılık artabilir.
