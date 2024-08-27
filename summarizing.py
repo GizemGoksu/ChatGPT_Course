@@ -1,5 +1,7 @@
 import functions
 
+# SUMMARIZING
+
 prod_review = """
 Got this panda plush toy for my daughter's birthday, \
 who loves it and takes it everywhere. It's soft and \ 

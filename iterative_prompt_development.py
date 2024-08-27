@@ -1,5 +1,7 @@
 import functions
 
+# ITERATIVE PROMPT DEVELOPMENT
+
 # PURPOSE : Generate a marketing product description from a product fact sheet
 
 fact_sheet_chair = """
