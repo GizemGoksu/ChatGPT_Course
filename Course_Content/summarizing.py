@@ -1,4 +1,4 @@
-import functions
+import Function.main_functions as main_functions
 
 # SUMMARIZING
 
@@ -25,7 +25,7 @@ backticks, in at most 30 words.
 Review: ```{prod_review}```
 """
 
-response = functions.get_completion(prompt)
+response = main_functions.get_completion(prompt)
 print(response)
 
 # Summarize with a focus on shipping and delivery
@@ -42,7 +42,7 @@ that mention shipping and delivery of the product.
 Review: ```{prod_review}```
 """
 
-response = functions.get_completion(prompt)
+response = main_functions.get_completion(prompt)
 print(response)
 
 # Summarize with a focus on price and value
@@ -60,7 +60,7 @@ that are relevant to the price and perceived value.
 Review: ```{prod_review}```
 """
 
-response = functions.get_completion(prompt)
+response = main_functions.get_completion(prompt)
 print(response)
 
 # Summaries include topics that are not related to the topic of focus.
@@ -78,7 +78,7 @@ delivery. Limit to 30 words.
 Review: ```{prod_review}```
 """
 
-response = functions.get_completion(prompt)
+response = main_functions.get_completion(prompt)
 print(response)
 
 # Summarize multiple product reviews
@@ -166,7 +166,7 @@ for i in range(len(reviews)):
     Review: ```{reviews[i]}```
     """
 
-    response = functions.get_completion(prompt)
+    response = main_functions.get_completion(prompt)
     print(i, response, "\n")
 
 

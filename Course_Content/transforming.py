@@ -1,4 +1,4 @@
-import functions
+import Function.main_functions as main_functions
 from redlines import Redlines
 from IPython.display import display, Markdown, Latex, HTML, JSON
 
@@ -10,14 +10,14 @@ prompt = f"""
 Translate the following English text to Spanish: \ 
 ```Hi, I would like to order a blender```
 """
-response = functions.get_completion(prompt)
+response = main_functions.get_completion(prompt)
 print(response)
 
 prompt = f"""
 Tell me which language this is: 
 ```Combien coûte le lampadaire?```
 """
-response = functions.get_completion(prompt)
+response = main_functions.get_completion(prompt)
 print(response)
 
 prompt = f"""
@@ -25,7 +25,7 @@ Translate the following  text to French and Spanish
 and English pirate: \
 ```I want to order a basketball```
 """
-response = functions.get_completion(prompt)
+response = main_functions.get_completion(prompt)
 print(response)
 
   # Formal and informal translation
@@ -35,7 +35,7 @@ Translate the following text to Spanish in both the \
 formal and informal forms: 
 'Would you like to order a pillow?'
 """
-response = functions.get_completion(prompt)
+response = main_functions.get_completion(prompt)
 print(response)
 
 # Universal Translator
@@ -50,14 +50,14 @@ user_messages = [
 
 for issue in user_messages:
     prompt = f"Tell me what language this is: ```{issue}```"
-    lang = functions.get_completion(prompt)
+    lang = main_functions.get_completion(prompt)
     print(f"Original message ({lang}): {issue}")
 
     prompt = f"""
     Translate the following  text to English \
     and Korean: ```{issue}```
     """
-    response = functions.get_completion(prompt)
+    response = main_functions.get_completion(prompt)
     print(response, "\n")
 
 # Tone Translation
@@ -66,7 +66,7 @@ prompt = f"""
 Translate the following from slang to a business letter: 
 'Dude, This is Joe, check out this spec on this standing lamp.'
 """
-response = functions.get_completion(prompt)
+response = main_functions.get_completion(prompt)
 print(response)
 
 # Format Conversion
@@ -81,7 +81,7 @@ prompt = f"""
 Translate the following python dictionary from JSON to an HTML \
 table with column headers and title: {data_json}
 """
-response = functions.get_completion(prompt)
+response = main_functions.get_completion(prompt)
 print(response)
 
 # Spellcheck/Grammar check.
@@ -103,7 +103,7 @@ for t in text:
     and errors, just say "No errors found". Don't use 
     any punctuation around the text:
     ```{t}```"""
-    response = functions.get_completion(prompt)
+    response = main_functions.get_completion(prompt)
     print(response)
 
 text = f"""
@@ -123,7 +123,7 @@ Ensure it follows APA style guide and targets an advanced reader.
 Output in markdown format.
 Text: ```{text}```
 """
-response = functions.get_completion(prompt)
+response = main_functions.get_completion(prompt)
 print(response)
 diff = Redlines(text,response) # Bunu kullanmanın amacı önceki ve sonraki hali arasındaki farkları görmek
 display(Markdown(diff.output_markdown))

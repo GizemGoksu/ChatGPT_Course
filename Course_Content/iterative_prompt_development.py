@@ -1,4 +1,4 @@
-import functions
+import Function.main_functions as main_functions
 
 # ITERATIVE PROMPT DEVELOPMENT
 
@@ -55,7 +55,7 @@ triple backticks.
 
 Technical specifications: ```{fact_sheet_chair}```
 """
-response = functions.get_completion(prompt)
+response = main_functions.get_completion(prompt)
 print(response)
 
   # ISSUE 1 : The text is too long.
@@ -73,7 +73,7 @@ Use at most 50 words.
 
 Technical specifications: ```{fact_sheet_chair}```
 """
-response = functions.get_completion(prompt)
+response = main_functions.get_completion(prompt)
 print(response)
 
   # ISSUE 2 : Text focuses on the wrong details
@@ -95,7 +95,7 @@ Use at most 50 words.
 
 Technical specifications: ```{fact_sheet_chair}```
 """
-response = functions.get_completion(prompt)
+response = main_functions.get_completion(prompt)
 print(response)
 
     # Adding  product ID
@@ -120,7 +120,7 @@ Use at most 50 words.
 
 Technical specifications: ```{fact_sheet_chair}```
 """
-response = functions.get_completion(prompt)
+response = main_functions.get_completion(prompt)
 print(response)
 
   # ISSUE 3 :  Description needs a table of dimensions
@@ -154,6 +154,6 @@ Place the description in a <div> element.
 Technical specifications: ```{fact_sheet_chair}```
 """
 
-response = functions.get_completion(prompt)
+response = main_functions.get_completion(prompt)
 print(response)
 
