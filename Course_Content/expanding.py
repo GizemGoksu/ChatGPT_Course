@@ -1,4 +1,4 @@
-import Function.main_functions as main_functions
+import Function.main_functions as mf
 
 # EXPANDING	
 
@@ -55,12 +55,12 @@ Sign the email as `AI customer agent`.
 Customer review: ```{review}```
 Review sentiment: {sentiment}
 """
-response = main_functions.get_completion(prompt)
+response = mf.get_completion(prompt)
 print(response)
 
 # Temperature'u arttırarak farklı bir sonuç elde etme
 
-response = main_functions.get_completion(prompt, temperature=0.7)
+response = mf.get_completion(prompt, temperature=0.7)
 print(response)
 
 # For tasks that require reliability and predictability, tempature should be set to 0.

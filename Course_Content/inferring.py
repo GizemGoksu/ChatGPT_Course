@@ -1,4 +1,4 @@
-import Function.main_functions as main_functions
+import Function.main_functions as mf
 
 # INFERRING : Sonuç çıkarma, anlam çıkarma
 
@@ -25,7 +25,7 @@ or "negative".
 
 Review text: '''{lamp_review}'''
 """
-response = main_functions.get_completion(prompt)
+response = mf.get_completion(prompt)
 print(response)
 
 # Identify types of emotions
@@ -38,7 +38,7 @@ lower-case words separated by commas.
 
 Review text: '''{lamp_review}'''
 """
-response = main_functions.get_completion(prompt)
+response = mf.get_completion(prompt)
 print(response)
 
 # Identifying anger
@@ -50,7 +50,7 @@ Give your answer as either yes or no.
 
 Review text: '''{lamp_review}'''
 """
-response = main_functions.get_completion(prompt)
+response = mf.get_completion(prompt)
 print(response)
 
 # Extract product name,company name,sentiment and angriness from customer reviews
@@ -72,7 +72,7 @@ Format the Anger value as a boolean.
 
 Review text: '''{lamp_review}'''
 """
-response = main_functions.get_completion(prompt)
+response = mf.get_completion(prompt)
 print(response)
 
 # Inferring topics
@@ -115,7 +115,7 @@ Format your response as a list of items separated by commas.
 
 Text sample: '''{story}'''
 """
-response = main_functions.get_completion(prompt)
+response = mf.get_completion(prompt)
 print(response)
 
 # Make a news alert for certain topics
@@ -136,7 +136,7 @@ List of topics: {", ".join(topic_list)}
 
 Text sample: '''{story}'''
 """
-response = main_functions.get_completion(prompt)
+response = mf.get_completion(prompt)
 print(response)
 
 

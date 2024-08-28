@@ -24,3 +24,11 @@ def get_completion(prompt,model="gpt-3.5-turbo",temperature=0):
     return response.choices[0].message.content
 
 # Temperature artarsa randomluk artar ve yaratcılık artabilir.
+
+def get_completion_from_messages(messages,model="gpt-3.5-turbo",temperature = 0):
+    response = client.chat.completions.create(
+        model=model,
+        messages=messages,
+        temperature=temperature,
+    )
+    return response.choices[0].message.content

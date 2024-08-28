@@ -1,4 +1,4 @@
-import Function.main_functions as main_functions
+import Function.main_functions as mf
 
 # PRINCIPLE 1
 
@@ -26,7 +26,7 @@ Summarize the text delimited by triple backticks
 into a single sentence.
 ```{text}```
 """
-response = main_functions.get_completion(prompt)
+response = mf.get_completion(prompt)
 print(response)
 
   # TACTIC 2 : Ask for a structured output like JSON, HTML
@@ -36,7 +36,7 @@ with their authors and genres.
 Provide them in JSON format with the following keys: 
 book_id, title, author, genre.
 """
-response = main_functions.get_completion(prompt)
+response = mf.get_completion(prompt)
 print(response)
 
   # TACTIC 3 : Ask the model to check whether conditions are satisfied
@@ -66,7 +66,7 @@ then simply write \"No steps provided.\"
 
 \"\"\"{text_1}\"\"\"
 """
-response = main_functions.get_completion(prompt)
+response = mf.get_completion(prompt)
 print("Completion for Text 1:")
 print(response)
 
@@ -83,7 +83,7 @@ the most intricate tapestry begins with a solitary thread.
 
 <child>: Teach me about resilience.
 """
-response = main_functions.get_completion(prompt)
+response = mf.get_completion(prompt)
 print(response)
 
 # PRINCIPLE 2
@@ -114,7 +114,7 @@ Separate your answers with line breaks.
 Text:
 ```{text}```
 """
-response = main_functions.get_completion(prompt_1)
+response = mf.get_completion(prompt_1)
 print("Completion for prompt 1:")
 print(response)
     # Ask for output in a specified format
@@ -136,7 +136,7 @@ Output JSON: <json with summary and num_names>
 
 Text: <{text}>
 """
-response = main_functions.get_completion(prompt_2)
+response = mf.get_completion(prompt_2)
 print("\nCompletion for prompt 2:")
 print(response)
 
@@ -164,7 +164,7 @@ Costs:
 3. Maintenance cost: 100,000 + 100x
 Total cost: 100x + 250x + 100,000 + 100x = 450x + 100,000
 """
-response = main_functions.get_completion(prompt)
+response = mf.get_completion(prompt)
 print(response)
 
   # example 2
@@ -224,5 +224,5 @@ Total cost: 100x + 250x + 100,000 + 100x = 450x + 100,000
 ```
 Actual solution:
 """
-response = main_functions.get_completion(prompt)
+response = mf.get_completion(prompt)
 print(response)
